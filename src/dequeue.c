@@ -176,7 +176,7 @@ int dequeue_clear(t_dequeue* dequeue) {
     return 0;
 }
 
-int dequeue_destroy(t_dequeue** dequeue) {
+int dequeue_dispose(t_dequeue** dequeue) {
     if (dequeue == NULL || *dequeue == NULL) {
         return EINVAL;
     }

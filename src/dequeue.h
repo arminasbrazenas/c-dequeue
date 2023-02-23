@@ -20,7 +20,7 @@ typedef struct s_dequeue {
 /**
  * Creates a new generic dequeue.
  * All dequeue elements are of the same size.
- * When you no longer need the dequeue, dequeue_destroy should be called to deallocate the memory.
+ * When you no longer need the dequeue, dequeue_dispose should be called to deallocate the used memory.
  * @param element_size_in_bytes Size of the dequeue element in bytes.
  * @return A pointer to the created dequeue on success; otherwise, NULL.
  */
@@ -107,10 +107,10 @@ int dequeue_clear(t_dequeue* dequeue);
 
 /**
  * Frees the memory of the given dequeue and sets its pointer to NULL.
- * @param dequeue Pointer to the dequeue to be destroyed.
+ * @param dequeue Pointer to the dequeue to be disposed.
  * @retval 0 on success;
  * @retval EINVAL if a NULL dequeue pointer is given.
  */
-int dequeue_destroy(t_dequeue** dequeue);
+int dequeue_dispose(t_dequeue** dequeue);
 
 #endif

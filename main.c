@@ -52,7 +52,7 @@ int main() {
     }
 
     assert(dequeue_is_empty(dequeue) && dequeue_get_size(dequeue) == dequeue_get_size(cloned_dequeue));
-    assert(dequeue_destroy(&cloned_dequeue) == 0 && cloned_dequeue == NULL);
+    assert(dequeue_dispose(&cloned_dequeue) == 0 && cloned_dequeue == NULL);
 
     // Test push front with peek
     for (int i = PEOPLE_CAPACITY - 1; i >= 0; --i) {
@@ -73,7 +73,7 @@ int main() {
     assert(dequeue != NULL && dequeue_get_size(dequeue) == 0);
 
     // Test destructor
-    assert(dequeue_destroy(&dequeue) == 0 && dequeue == NULL);
+    assert(dequeue_dispose(&dequeue) == 0 && dequeue == NULL);
 
     // Test null pointers
     assert(dequeue_push_back(NULL, NULL) == EINVAL);
@@ -84,7 +84,7 @@ int main() {
     assert(dequeue_peek_front(NULL) == NULL);
     assert(dequeue_clone(NULL) == NULL);
     assert(dequeue_clear(NULL) == EINVAL);
-    assert(dequeue_destroy(NULL) == EINVAL);
+    assert(dequeue_dispose(NULL) == EINVAL);
 
     return EXIT_SUCCESS;
 }
