@@ -1,6 +1,6 @@
-CC			= gcc
-EXECUTABLE	= dequeue-tests.exe
-SRC			= ./src/
+CC=gcc
+EXECUTABLE=dequeue-tests.exe
+SRC=./src/
 
 all: tests.o dequeue.o
 	$(CC) -o $(EXECUTABLE) tests.o dequeue.o
