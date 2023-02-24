@@ -6,8 +6,8 @@
 #include <errno.h>
 #include <time.h>
 
-#define CAPACITY 10
-#define MAX_STR_LENGTH 32
+#define CAPACITY        10
+#define MAX_STR_LENGTH  32
 
 void dequeue_test_constructor_destructor();
 void dequeue_test_get_size();
@@ -50,10 +50,10 @@ t_person* get_people() {
     for (int i = 0; i < CAPACITY; ++i) {
         people[i].age = rand();
         int name_length = rand() % (MAX_STR_LENGTH - 1);
+        memset(people[i].name, '\0', MAX_STR_LENGTH);
         for (int j = 0; j < name_length; ++j) {
             people[i].name[j] = rand() % 26 + 'a';
         }
-        people[i].name[MAX_STR_LENGTH - 1] = '\0';
     }
 
     return people;
