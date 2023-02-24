@@ -22,7 +22,7 @@ void dequeue_test_invalid_arguments();
 int main() {
     time_t seed = time(NULL);
     srand(time(NULL));
-    printf("Test seed: %d\n\n", seed);
+    printf("Test seed: %ld\n\n", seed);
 
     dequeue_test_constructor_destructor();
     dequeue_test_get_size();
